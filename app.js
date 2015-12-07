@@ -4,11 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var mongoose = require("mongoose");
+require('./models/Posts');
+require('./models/Comments');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+mongoose.connect("mongodb://redditadmin:redditadmin@ds061464.mongolab.com:61464/reddit-clone");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
