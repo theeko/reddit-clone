@@ -2,10 +2,8 @@ require('./models/Posts');
 require('./models/Comments');
 require('./models/Users');
 require('./config/passport');
-mongoose.connect("mongodb://redditadmin:redditadmin@ds061464.mongolab.com:61464/reddit-clone");
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -13,6 +11,8 @@ var mongoose = require("mongoose");
 var passport = require('passport');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+mongoose.connect("mongodb://redditadmin:redditadmin@ds061464.mongolab.com:61464/reddit-clone");
 
 
 
